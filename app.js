@@ -4,7 +4,6 @@ var userhandlers=require("./requesthandlers/userhandlers");
 var producthandlers=require("./requesthandlers/producthandlers");
 var path=require('./datahandlers/pathnames');
 var database= require('./datahandlers/database');
-
 var handle = {};
 
 handle[path.search] = producthandlers.search;

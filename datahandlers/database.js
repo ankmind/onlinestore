@@ -3,7 +3,8 @@
 	var ObjectId = require('mongodb').ObjectID;
 
 	//mention mongodb url
-	var url='mongodb://localhost:27017/onlinestore';
+	const ip ="52.221.231.185";
+	var url="mongodb://"+ip+":27017/onlinestore";
     
     MongoClient.connect(url, function(err, db) {
 
