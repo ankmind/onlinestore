@@ -1,0 +1,9 @@
+exports.search = '/search';
+exports.edit = '/edit';
+exports.remove='/remove';
+exports.add='/add';
+exports.signin='/signin';
+exports.signup='/signup';
+exports.signout='/signout';
+exports.changepassword='/changepassword';
+exports.view ='/view';

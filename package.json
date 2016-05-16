@@ -1,0 +1,17 @@
+{
+  "name": "onlinestore",
+  "version": "1.0.0",
+  "description": "mini_project_onlinestore",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ankmind",
+  "license": "ISC",
+  "dependencies": {
+    "crypto": "0.0.3",
+    "http": "0.0.0",
+    "mongodb": "^2.1.18",
+    "url": "^0.11.0"
+  }
+}
