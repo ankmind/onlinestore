@@ -38,7 +38,7 @@ request.addListener("end", function() {
 }
 
 else{
- route(handle, pathname, response,null,request.headers);
+ route(handle, pathname, response,"",request.headers);
 }
 }
 

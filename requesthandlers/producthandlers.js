@@ -46,7 +46,7 @@ function view(requestdetails){
 function remove(requestdetails){
 var productcollection =database.db.collection('product');
 var productid=requestdetails.postdata.productid;
-console.log(productid);
+
 productid= new ObjectId(productid);
 
      productcollection.remove({"_id":productid},function(err,res){
@@ -55,7 +55,7 @@ productid= new ObjectId(productid);
    	 	requestdetails.response.end();
    	 }
    	 else{
-   	 	requestdetails.response.write(JSON.stringify({"value":"success"}));
+   	 	requestdetails.response.write(JSON.stringify({"value":"success","result":res}));
    	 	requestdetails.response.end();
    	 }
    });
@@ -64,7 +64,6 @@ productid= new ObjectId(productid);
 
 function edit(requestdetails){
  var productcollection =database.db.collection('product');
-
  var product=requestdetails.postdata;
  var productid  =  product.productid;
  var field = product.field;
@@ -82,7 +81,7 @@ function edit(requestdetails){
    	 	requestdetails.response.end();
    	 }
    	 else{
-   	 	requestdetails.response.write(JSON.stringify({"value":"success"}));
+   	 	requestdetails.response.write(JSON.stringify({"value":"success","result":res}));
    	 	requestdetails.response.end();
    	 }
    });

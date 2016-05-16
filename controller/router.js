@@ -6,7 +6,6 @@ function route(handle,pathname,response,postdata,headers) {
 if (typeof handle[pathname] === 'function') {
      
     var requestdetails=requestdata(headers,response,postdata);
-    
     switch(pathname) {
     case path.search:
     case path.edit:
@@ -33,8 +32,8 @@ if (typeof handle[pathname] === 'function') {
     default :{
     	handle[pathname](requestdetails);
     }
+    }
   }
-} 
 
 else {
 console.log("No request handler found for " + pathname);

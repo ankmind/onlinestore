@@ -1,6 +1,8 @@
 	var MongoClient = require('mongodb').MongoClient;
 	var assert = require('assert');
 	var ObjectId = require('mongodb').ObjectID;
+
+	//mention mongodb url
 	var url='mongodb://localhost:27017/onlinestore';
     
     MongoClient.connect(url, function(err, db) {
