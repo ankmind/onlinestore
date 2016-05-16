@@ -72,12 +72,13 @@ function signup(requestdetails){
 
        var token =crypto.randomBytes(48).toString('hex');
    	 	 usercollection.insert({"_id":username,"password":password,"mobile":mobile,"token":token},
-   	 	 	function(err){
+   	 	 	function(err,res){
    	 	 		if(err){
    	 	 				requestdetails.response.write(JSON.stringify({"value":"error occured while signup"}));
    	 	 		}
    	 	 		else{
-   	 	 			requestdetails.response.write(JSON.stringify({"value":"signup successfull"}));
+   	 	 			requestdetails.response.write(JSON.stringify({"value":"signup successfull",
+              "result":res}));
    	 	 		}
    	 	 		requestdetails.response.end();
    	 	 	});   	 	 
@@ -90,6 +91,12 @@ function signup(requestdetails){
 
 function changepassword(requestdetails){
 var newpassword=requestdetails.headers.newpassword;
+
+if(newpassword==null || newpassword==""){
+requestdetails.response.write(JSON.stringify({"value":"new password cannot be null"}));
+      requestdetails.response.end();
+}
+else{
 crypto.randomBytes(48, function(err, buffer) {
    var token = buffer.toString('hex');
    database.db.collection('user').update({"_id":requestdetails.headers.username},{
@@ -108,6 +115,7 @@ crypto.randomBytes(48, function(err, buffer) {
    	 }
    })
   });
+}
 }
 
 
