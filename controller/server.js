@@ -42,8 +42,8 @@ else{
 }
 }
 
-
-http.createServer(onRequest).listen(8888);
+var port =Number(process.env.PORT || 3000);
+http.createServer(onRequest).listen(port);
 console.log("Server has started.");
 }
 
