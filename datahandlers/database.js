@@ -4,7 +4,7 @@
 
 	//mention mongodb url
 	//put ip with running mongo db instance
-	const ip ="localhost";
+	const ip = "localhost";
 	var url="mongodb://"+ip+":27017/onlinestore";
     
     MongoClient.connect(url, function(err, db) {
